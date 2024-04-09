@@ -1,0 +1,56 @@
+#:include kv/homepage.kv
+#:include kv/ajustespage.kv
+#:include kv/adicionarvendedorpage.kv
+#:include kv/adicionarvendaspage.kv
+#:include kv/fotoperfilpage.kv
+#:include kv/todasvendaspage.kv
+#:include kv/listarvendedorespage.kv
+#:include kv/loginpage.kv
+#:include kv/vendasoutrovendedorpage.kv
+#:import utils kivy.utils
+
+FloatLayout:
+    canvas:
+        Color:
+            rgb: utils.get_color_from_hex('#001824')
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    Image:
+        pos_hint: {"right":1, "top":0.9}
+        size_hint: 1, 0.2
+        source: "icones/hash.png"
+        id: foto_perfil
+    ScreenManager:
+        pos_hint: {"right":1, "top": 0.7}
+        size_hint: 1, 0.7
+        id: screen_manager
+        LoginPage:
+            name: "loginpage"
+            id: loginpage
+        HomePage:
+            id: homepage
+            name: "homepage"
+
+        AjustesPage:
+            id: ajustespage
+            name: "ajustespage"
+
+        AdicionarVendasPage:
+            id: adicionarvendaspage
+            name: "adicionarvendaspage"
+        AdicionarVendedorPage:
+            id: adicionarvendedorpage
+            name: "adicionarvendedorpage"
+        FotoPerfilPage:
+            id: fotoperfilpage
+            name: "fotoperfilpage"
+        ListarVendedoresPage:
+            id: listarvendedorespage
+            name: "listarvendedorespage"
+        TodasVendasPage:
+            id: todasvendaspage
+            name: "todasvendaspage"
+        VendasOutroVendedorPage:
+            name: "vendasoutrovendedorpage"
+            id: vendasoutrovendedorpage
