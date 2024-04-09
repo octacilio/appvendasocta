@@ -6,12 +6,14 @@ from botoes import *
 import requests
 from bannervenda import BannerVenda
 import os
+import certifi
 # quando temos que passar mais argumantos que a funcao pede, temos q usar esse trunfo, passar um parametro pra funcao
 from functools import partial
 from myfirebase import MyFirebase
 from bannervendedor import BannerVendedor
 from datetime import date
 
+os.environ["SSL_CERT_FILE"]=certifi.where()
 
 GUI = Builder.load_file("main.kv")
 
